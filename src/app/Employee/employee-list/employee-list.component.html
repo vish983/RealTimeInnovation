@@ -1,0 +1,51 @@
+<div class="employee-list">
+    <div class="header">Employee List</div>
+    <div *ngIf="previousEmployees.length==0 && currentEmployees.length==0" style="display: flex; justify-content: center;"> 
+      <img src="../../../assets/Picture1.png" alt="">
+    </div>
+
+    <div *ngIf="previousEmployees.length>0 || currentEmployees.length>0">
+      <div class="section">
+        <div class="section-header">Current Employees</div>
+        <div
+          *ngFor="let employee of currentEmployees"
+          class="employee"
+          [class.swiped]="employee.swiped"
+          (panleft)="onSwipeLeft(employee)"
+          (panright)="onSwipeRight(employee)"
+        >
+          <div class="details">
+            <div class="name" (click)="redirectToEdit(employee.id)">{{ employee.name }}</div>
+            <div class="role">{{ employee.designation }}</div>
+            <div class="dates">From {{ employee.startDate }}</div>
+          </div>
+          <div class="delete-btn" (click)="deleteEmployee(employee)">Delete</div>
+        </div>
+      </div>
+    
+      <div class="section">
+        <div class="section-header">Previous Employees</div>
+        <div
+          *ngFor="let employee of previousEmployees"
+          class="employee"
+          [class.swiped]="employee.swiped"
+          (panleft)="onSwipeLeft(employee)"
+          (panright)="onSwipeRight(employee)"
+        >
+          <div class="details">
+            <div class="name" (click)="redirectToEdit(employee.id)" >{{ employee.name }}</div>
+            <div class="role">{{ employee.designation }}</div>
+            <div class="dates">{{ employee.startDate }} - {{ employee.endDate }}</div>
+          </div>
+          <div class="delete-btn" (click)="deleteEmployee(employee)">Delete</div>
+        </div>
+      </div>
+    </div>
+    <button class="add-button" routerLink="/addemployee">+</button>
+  </div>
+  
+  <div class="undo-banner" *ngIf="undoVisible">
+    Employee data has been deleted
+    <button (click)="undoDelete()">Undo ({{this.countdown}})</button>
+  </div>
+  

@@ -1,0 +1,63 @@
+
+
+<div class="edit-employee-container">
+  <div class="header">
+    <h2 *ngIf="this.userId">Edit Employee Details</h2>
+    <h2 *ngIf="!this.userId">Add Employee Details</h2>
+    <button class="delete-btn" *ngIf="this.userId" (click)="deleteEmployee(userId)">🗑</button>
+  </div>
+
+  <form [formGroup]="userForm">
+    <!-- Name Input -->
+    <div class="form-group">
+      <label for="name">
+        <i class="icon-user"></i>
+        <input id="name" formControlName="name" type="text" placeholder="Employee Name" name="name" />
+      </label>
+    </div>
+
+    <!-- Role Dropdown -->
+    <div class="form-group">
+      <label for="role">
+        <i class="icon-role"></i>
+        <select id="role" name="role" formControlName="designation">
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+      </label>
+    </div>
+
+    <!-- Date Inputs -->
+    <div class="form-group date-group">
+      <label for="start-date">
+        <i class="icon-calendar"></i>
+        <input
+          id="start-date"
+          type="text"
+          readonly
+          formControlName="startDate"
+          (click)="openCalendar('startDate')"
+          placeholder="No date"
+        />
+      </label>
+      <span class="to-arrow">→</span>
+      <label for="end-date">
+        <i class="icon-calendar"></i>
+        <input
+          id="end-date"
+          type="text"
+          readonly
+          formControlName="endDate"
+          (click)="openCalendar('endDate')"
+          placeholder="No date"
+        />
+      </label>
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-group">
+      <button type="button" class="cancel-btn" routerLink="/employeelist">Cancel</button>
+      <button class="save-btn" (click)="save()">Save</button>
+    </div>
+  </form>
+</div>
+

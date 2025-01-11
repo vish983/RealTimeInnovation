@@ -1,0 +1,317 @@
+/* General Container Styles */
+.edit-employee-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  background-color:#2196F3 ;
+  color: #fff;
+
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #f44336;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Form Group Styles */
+.form-group {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-grow: 1;
+}
+
+label i {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input[type="date"], input[readonly] {
+  width: 100%;
+}
+
+.date-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  flex-wrap: wrap;  /* Allow wrapping of date group elements */
+}
+
+.date-group label {
+  flex: 1;
+  min-width: 120px;  /* Ensure labels don't shrink too much */
+}
+
+.to-arrow {
+  flex: 0 0 auto;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+/* Button Group Styles */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Stack buttons on small screens */
+}
+
+.cancel-btn,
+.save-btn {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 120px; /* Ensure buttons are at least a certain size */
+}
+
+.cancel-btn {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.save-btn {
+  background-color: #2196F3;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #1976D2;
+  transform: scale(1.05);
+}
+
+/* Responsive Image */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .edit-employee-container {
+      padding: 15px;
+  }
+
+  .header h2 {
+      font-size: 1.2rem;
+  }
+
+  .form-group label i {
+      font-size: 1rem;
+  }
+
+  input, select {
+      font-size: 0.9rem;
+  }
+
+  .cancel-btn, .save-btn {
+      font-size: 0.9rem;
+  }
+
+  input[type="date"], input[readonly] {
+      width: 100%;
+  }
+
+  .date-group {
+      flex-direction: row;
+      gap: 15px;  /* Increase gap between date fields and labels */
+      justify-content: space-between;
+  }
+
+  .date-group label {
+      flex: 1 1 10%;  /* Make labels take up full width on mobile */
+  }
+
+  .to-arrow {
+      display: none; /* Hide arrow between date inputs on smaller screens */
+  }
+
+  input[type="date"] {
+      width: 100%;  /* Ensure date input spans the full width */
+  }
+}
+
+@media (max-width: 480px) {
+  .edit-employee-container {
+      padding: 10px;
+  }
+
+  .header h2 {
+      font-size: 1rem;
+  }
+
+  .form-group {
+      flex-direction: column;
+      gap: 10px; /* Larger gap between fields */
+  }
+
+  .cancel-btn, .save-btn {
+      font-size: 0.8rem;
+      padding: 8px 15px;
+      margin: 5px 0; /* Add space between buttons */
+  }
+
+  .date-group {
+      flex-direction: row;
+      gap: 12px;  /* Adjust gap for better mobile layout */
+  }
+
+  .date-group label {
+      font-size: 0.9rem;  /* Slightly smaller labels for mobile */
+  }
+  .date-group label {
+    flex: 1 1 10%;  /* Make labels take up full width on mobile */
+}
+
+  .to-arrow {
+      display: none;  /* Hide arrow on smaller screens */
+  }
+
+  input[type="date"] {
+      padding: 8px;  /* Adjust padding for date input on small screens */
+      font-size: 0.9rem;  /* Slightly smaller font for date input */
+  }
+
+  .button-group {
+      flex-direction: row; /* Stack buttons on small screens */
+  }
+
+  input, select {
+      font-size: 0.9rem; /* Slightly smaller font */
+  }
+  /* Additional adjustments to form labels and inputs */
+  label {
+      font-size: 0.9rem;
+  }
+
+  /* General styles for select */
+select {
+  width: 100%;              /* Ensure the select takes full width */
+  padding: 10px;            /* Add some padding for better user experience */
+  border: 1px solid #ddd;   /* Border for the select field */
+  border-radius: 5px;       /* Round the corners */
+  font-size: 1rem;          /* Maintain readable font size */
+  box-sizing: border-box;   /* Ensure padding is included in the width */
+  background-color: white;  /* Background color */
+  appearance: none;         /* Remove default dropdown arrow */
+  -webkit-appearance: none; /* Remove default dropdown for webkit browsers */
+  -moz-appearance: none;    /* Remove default dropdown for Firefox */
+}
+
+/* Style for select on focus */
+select:focus {
+  outline: none;
+  border-color: #2196F3;    /* Highlight border when focused */
+}
+
+/* Add a custom dropdown arrow */
+select::-ms-expand {
+  display: none; /* Hide default arrow in IE */
+}
+
+select::after {
+  content: ' ▼'; /* Custom arrow */
+  font-size: 1.2rem;
+  color: #888;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Allow clicks through the arrow */
+}
+
+.select-container {
+  position: relative; /* Position for custom arrow */
+  width: 100%;
+}
+
+/* Responsive Styles for Options */
+select option {
+  padding: 10px;         /* Add padding for better readability */
+  font-size: 1rem;       /* Ensure option text is readable */
+  background-color: #fff; /* Background color for options */
+  border: none;          /* Remove border */
+}
+
+select option:hover {
+  background-color: #f5f5f5; /* Highlight options on hover */
+}
+
+/* Media Queries for Responsiveness */
+
+/* On screens less than 768px, adjust select styling */
+@media (max-width: 768px) {
+  select {
+    font-size: 0.9rem; /* Slightly reduce font size on smaller screens */
+    padding: 8px;      /* Reduce padding on smaller screens */
+  }
+
+  select option {
+    font-size: 0.9rem; /* Adjust option font size */
+  }
+}
+
+/* On screens less than 480px, further adjust select and options */
+@media (max-width: 480px) {
+  select {
+    font-size: 0.8rem; /* Further reduce font size */
+    padding: 6px;      /* Further reduce padding */
+  }
+
+  select option {
+    font-size: 0.8rem; /* Adjust option font size for small screens */
+  }
+
+  .select-container {
+    width: 100%; /* Ensure the container fills the screen */
+  }
+}
+
+
+  
+}

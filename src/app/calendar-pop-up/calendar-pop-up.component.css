@@ -1,0 +1,219 @@
+/* General Calendar Container */
+.calendar-container {
+  width: 100%;             /* Full width to adapt to container */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  box-sizing: border-box;  /* To include padding in the width calculation */
+}
+
+/* Header buttons */
+.calendar-header {
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.calendar-header button {
+  border-radius: 6px;
+  border-color: unset;
+  width: 45%; /* Adjust width for better spacing */
+  margin: 0 2% 4% 2%;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  color: #1e90ff;
+  background-color: #d8e5f1;
+  box-shadow: none !important;
+}
+
+.calendar-header .btn-header.active,
+.calendar-header .btn-header:hover {
+  background-color: #1e90ff !important;
+  color: white !important;
+}
+
+/* Month navigation */
+.month-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+/* Grid for calendar days */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.calendar-grid div {
+  text-align: center;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.calendar-grid div.selected {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Footer */
+.calendar-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.calendar-footer button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: none;
+}
+
+.calendar-footer .cancel {
+  background-color: #ddd;
+  color: #333;
+}
+
+.calendar-footer .save {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Footer Left Section */
+.footer-left {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.calendar-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+  background-size: contain;
+}
+
+/* Footer Right Section */
+.footer-right button {
+  margin-left: 10px;
+}
+
+.cancel {
+  background-color: transparent;
+  border: 1px solid #ddd;
+  color: #555;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel:hover {
+  background-color: #f9f9f9;
+}
+
+.save {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.save:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Styles */
+
+/* For Mobile Screens (max-width 768px) */
+@media (max-width: 768px) {
+  .calendar-container {
+    padding: 12px;
+  }
+
+  /* Adjusting the calendar grid */
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+  }
+
+  .calendar-grid div {
+    font-size: 12px; /* Smaller text for mobile */
+    padding: 6px;
+  }
+
+  .calendar-header button {
+    width: 48%; /* More compact buttons */
+    font-size: 12px;
+  }
+
+  .month-navigation {
+    font-size: 12px;
+  }
+
+  .footer-left {
+    font-size: 12px;
+  }
+
+  .calendar-footer button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* For Small Mobile Screens (max-width 480px) */
+@media (max-width: 480px) {
+  .calendar-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  /* Adjust calendar grid layout */
+  .calendar-grid {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+  }
+
+  .calendar-grid div {
+    font-size: 10px; /* Reduce font size further */
+    padding: 5px;
+  }
+
+  .calendar-header button {
+    width: 46%; /* Keep buttons responsive */
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .month-navigation {
+    font-size: 12px;
+  }
+
+  .footer-left {
+    font-size: 12px;
+  }
+
+  .calendar-footer button {
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  /* Adjust selected date icon size */
+  .calendar-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
